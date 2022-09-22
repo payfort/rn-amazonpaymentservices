@@ -1,0 +1,28 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '11.0'
+
+target 'RnAmazonPaymentServiceSdkExample' do
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  pod 'rn-amazon-payment-service', :path => '../..'
+  pod 'PayFortSDK'
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+   post_install do |installer|
+        installer.pods_project.targets.each do |target|
+          if ['PayFortSDK'].include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+            end
+          end
+        end
+      end
+
+end

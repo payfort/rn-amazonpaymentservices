@@ -1,0 +1,4 @@
+<resources>
+    <string name="customPay">Custom Pay</string>
+    <string name="directPay">Direct Pay</string>
+</resources>
