@@ -1,6 +1,6 @@
 {
   "name": "rn-amazon-payment-services",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Amazon Payment Services Sdk react native package",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
