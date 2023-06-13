@@ -32,6 +32,7 @@ import java.util.Map;
 
 public class RnAmazonPaymentServiceSdkModule extends ReactContextBaseJavaModule  implements ActivityEventListener {
     public static final String NAME = "RnAmazonPaymentServiceSdk";
+    private static final int PAYFORT_REQUEST_CODE = 1166;
 
     public RnAmazonPaymentServiceSdkModule(ReactApplicationContext reactContext) {
         super(reactContext);
@@ -127,7 +128,7 @@ public class RnAmazonPaymentServiceSdkModule extends ReactContextBaseJavaModule 
         FortSdk.getInstance().registerCallback(getReactApplicationContext().getCurrentActivity(),
           fortrequest,
           env,
-          requestCodeInt,
+          PAYFORT_REQUEST_CODE,
           fortCallback,
           showLoading,
           new FortInterfaces.OnTnxProcessed() {
@@ -156,7 +157,9 @@ public class RnAmazonPaymentServiceSdkModule extends ReactContextBaseJavaModule 
 
   @Override
   public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
-      fortCallback.onActivityResult(requestCode, resultCode, data);
+      if(requestCode==PAYFORT_REQUEST_CODE) {
+          fortCallback.onActivityResult(requestCode, resultCode, data);
+      }
   }
 
   @Override
