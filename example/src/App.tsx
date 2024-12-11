@@ -105,7 +105,7 @@ export default function App() {
 
   const callCustomFortRequest = async () => {
     try {
-      setShowCustomScreen(true);
+      showCustomScreen ? setShowCustomScreen(false) : setShowCustomScreen(true);
     } catch (e) {
       console.log(e, 'error while calling request');
     }
