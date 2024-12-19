@@ -1,6 +1,6 @@
 {
   "name": "rn-amazon-payment-services",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Amazon Payment Services Sdk react native package",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -19,7 +19,8 @@
     "!ios/build",
     "!**/__tests__",
     "!**/__fixtures__",
-    "!**/__mocks__"
+    "!**/__mocks__",
+    "app.plugin.js"
   ],
   "scripts": {
     "test": "jest",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
+    "@expo/config-plugins": "^9.0.12",
     "@react-native-community/eslint-config": "^2.0.0",
     "@release-it/conventional-changelog": "^2.0.0",
     "@types/jest": "^26.0.0",
