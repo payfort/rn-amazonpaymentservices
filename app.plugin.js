@@ -105,17 +105,20 @@ const withAmazonPaymentServicesIOS = (config) => {
       );
       const contents = fs.readFileSync(filePath, 'utf-8');
 
+      // First merge - changed tag
       const amazonPaymentPodfileDep = mergeContents({
-        tag: 'add Amazon payment SDK to Podfile',
+        tag: 'add Amazon payment SDK pod dependency', // Different tag
         src: contents,
         newSrc: [`pod 'PayFortSDK'`].join('\n'),
         anchor: 'use_expo_modules!',
         offset: 1,
         comment: '#',
       });
+
+      // Second merge - use first merge result and different tag
       const amazonPaymentTarget = mergeContents({
-        tag: 'add Amazon payment SDK to Podfile',
-        src: contents,
+        tag: 'add Amazon payment SDK build settings', // Different tag
+        src: amazonPaymentPodfileDep.contents,
         newSrc: [
           `installer.pods_project.targets.each do |target|
           if ['PayFortSDK'].include? target.name
@@ -131,7 +134,6 @@ const withAmazonPaymentServicesIOS = (config) => {
         comment: '#',
       });
 
-      fs.writeFileSync(filePath, amazonPaymentPodfileDep.contents);
       fs.writeFileSync(filePath, amazonPaymentTarget.contents);
 
       return config;
