@@ -272,6 +272,62 @@ import {
 
 
 
+### Apple Pay
+
+```js
+
+import { ApplePay, ApplePayRequest, RequestObjectApplePay } from 'rn-amazon-payment-services';
+
+
+try {
+
+    const transactionRequest: RequestObjectApplePay = {
+        amount: '',
+        command: 'PURCHASE',
+        digital_wallet: 'APPLE_PAY',
+        merchant_reference: '',
+        currency: 'AED',
+        language: 'en',
+        customer_email: '',
+        sdk_token: '',
+        customer_ip: '',
+        phone_number: '',
+    };
+
+    const applePaymentDetails: ApplePayRequest = {
+        displayAmount: '',
+        environment: 'TEST',
+        merchantIdentifier: 'merchant.com.*',
+        countryCode: 'AE',
+        currencyCode: 'AED',
+        supportedNetworks: ['visa', 'mastercard', 'mada', 'amex'],
+        transactionDetails: transactionRequest
+    };
+
+    let result = await ApplePay.startPayment(applePaymentDetails);
+
+    //handle result
+
+} catch (error: any) {
+    // handle error
+}
+
+
+```
+
+
+### Apple Pay Request props (ApplePayRequest)
+
+| Attribute            | Type         | Description                                                                                                                                                                                                                                                                        | Mandatory | Maximum | Example                                                               |
+|----------------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|---------|-----------------------------------------------------------------------|
+| displayAmount              | Alpha        | The amount to be display on the Apple payment screen                                                                                                                                                                              | Yes       | 10      | 100                                                              |
+| environment                              | `'TEST'`, `'PRODUCTION'`     | Parameter used to determine whether the request is going to be submitted to the test or production environment. |      Yes      |
+| merchantIdentifier | Alphanumeric    | The apple pay merchant identifier created on the apple developer account |      Yes      | 150  | merchant.com.test.integration|
+| countryCode | Alpha | A list of two-letter country codes for limiting payment to cards from specific countries or regions. | Yes | 2 | AE|
+| currencyCode | Alpha | The three-letter ISO 4217 currency code for the payment. | Yes | 3 | AED|
+| supportedNetworks | `object` | Array value of payment options supported on apple payment | Yes |  | `['visa', 'mastercard', 'mada', 'amex']` |
+| transactionDetails | `object` | The request object containing the details for processing the apple payment. | Yes | | `{ amount: '', command: 'PURCHASE', digital_wallet: 'APPLE_PAY', merchant_reference: '', currency: 'AED', language: 'en', customer_email: '', sdk_token: token, customer_ip: '', customer_name: '', phone_number: '', settlement_reference: '', merchant_extra: ''}` |
+
 ## License
 
 MIT

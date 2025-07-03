@@ -4,6 +4,7 @@
 #import <React/RCTViewManager.h>
 
 #import "RnAmazonPaymentServiceSdk.h"
+#import <PassKit/PassKit.h>
 
 @implementation RnAmazonPaymentServiceSdk
 
@@ -23,7 +24,6 @@ RCT_EXPORT_METHOD(getDeviceID: (RCTPromiseResolveBlock)resolve
      }
 
 }
-
 
 @end
 

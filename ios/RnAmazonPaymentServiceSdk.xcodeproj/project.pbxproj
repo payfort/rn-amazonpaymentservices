@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D33FFBA2D8C32E9003E3137 /* ApplePayModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D33FFB92D8C32E9003E3137 /* ApplePayModule.m */; };
+		2D8E9E7E2D8A984500FA9D46 /* ApplePayModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8E9E7D2D8A984500FA9D46 /* ApplePayModule.swift */; };
 		F4FF95D7245B92E800C19C63 /* RnAmazonPaymentServiceSdk.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* RnAmazonPaymentServiceSdk.swift */; };
 		FD4226602851F8A3007ADC00 /* StandardCheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD42265F2851F8A3007ADC00 /* StandardCheckoutView.swift */; };
 		FD4226622851F9D3007ADC00 /* StandardCheckoutViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4226612851F9D3007ADC00 /* StandardCheckoutViewManager.swift */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRnAmazonPaymentServiceSdk.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRnAmazonPaymentServiceSdk.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D33FFB92D8C32E9003E3137 /* ApplePayModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplePayModule.m; sourceTree = "<group>"; };
+		2D8E9E7D2D8A984500FA9D46 /* ApplePayModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplePayModule.swift; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RnAmazonPaymentServiceSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnAmazonPaymentServiceSdk.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* RnAmazonPaymentServiceSdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RnAmazonPaymentServiceSdk-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* RnAmazonPaymentServiceSdk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnAmazonPaymentServiceSdk.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				2D33FFB92D8C32E9003E3137 /* ApplePayModule.m */,
+				2D8E9E7D2D8A984500FA9D46 /* ApplePayModule.swift */,
 				FD42266D285738D1007ADC00 /* DirectPayViewManager.swift */,
 				FD42266B285738BC007ADC00 /* DirectPayView.swift */,
 				FD42266828532E4B007ADC00 /* CustomCheckoutViewManager.swift */,
@@ -140,8 +146,10 @@
 			files = (
 				FD42266E285738D1007ADC00 /* DirectPayViewManager.swift in Sources */,
 				FD42266C285738BC007ADC00 /* DirectPayView.swift in Sources */,
+				2D8E9E7E2D8A984500FA9D46 /* ApplePayModule.swift in Sources */,
 				F4FF95D7245B92E800C19C63 /* RnAmazonPaymentServiceSdk.swift in Sources */,
 				FD42266928532E4B007ADC00 /* CustomCheckoutViewManager.swift in Sources */,
+				2D33FFBA2D8C32E9003E3137 /* ApplePayModule.m in Sources */,
 				FD4226622851F9D3007ADC00 /* StandardCheckoutViewManager.swift in Sources */,
 				FD42266728532E33007ADC00 /* CustomCheckoutView.swift in Sources */,
 				FD4226602851F8A3007ADC00 /* StandardCheckoutView.swift in Sources */,
@@ -251,6 +259,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React-Core/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
@@ -270,6 +280,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../node_modules/react-native/React-Core/**",
+					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
